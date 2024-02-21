@@ -5,9 +5,13 @@ This is a RESTful API web service built using TypeScript and NestJS for the Fetc
 ## Table of Contents
 
 1.) [Getting Started](#getting-started)
+
 2.) [Endpoints](#endpoints)
+
 3.) [Rules](#rules)
+
 4.) [Testing](#testing)
+
 5.) [Why NestJS?](#why-nestjs)
 
 <a name="getting-started"></a>
