@@ -93,7 +93,7 @@ How many points should be earned is defined by the rules listed in the Rules sec
 
 **Example Request via `curl`**:
 
-    curl -X POST -H "Content-Type: application/json" -d "{\"retailer\":\"Walgreens\",\"purchaseDate\":\"2022-01-02\",\"purchaseTime\":\"08:25\",\"total\":\"2.65\",\"items\":[{\"shortDescription\":\"Pepsi - 12-oz\",\"price\":\"1.25\"},{\"shortDescription\":\"Dasani\",\"price\":\"1.40\"}]}" http://localhost:8080/receipts/process
+    curl -X POST -H "Content-Type: application/json" -d "{\"retailer\":\"Walgreens\",\"purchaseDate\":\"2022-01-02\",\"purchaseTime\":\"08:25\",\"total\":\"2.65\",\"items\":[{\"shortDescription\":\"Pepsi - 12-oz\",\"price\":\"1.25\"},{\"shortDescription\":\"Dasani\",\"price\":\"1.40\"}]}" http://localhost:3001/receipts/process
 
 **Example Response**:
 
@@ -111,13 +111,13 @@ How many points should be earned is defined by the rules listed in the Rules sec
 
 **Example Request (via cURL)**:
 
-    curl -X GET "localhost:8080/receipts/3/points" \ -H "Content-Type: application/json"
+    curl -X GET "localhost:3001/receipts/3/points" \ -H "Content-Type: application/json"
 
 **Example Request (via Fetch API in JavaScript)**:
 
     let id = 3;
 
-    fetch(`localhost:8080/receipts/${id}/points`)
+    fetch(`localhost:3001/receipts/${id}/points`)
         .then((response) => {
     	    return response.json();
         })
