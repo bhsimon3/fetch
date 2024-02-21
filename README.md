@@ -33,7 +33,9 @@ Ensure that Docker is installed and running on your system. One option for Docke
 To get started, you will need to fetch the source code for this application. This can be done via one of two connection methods: HTTPS or SSH. If you are unsure, I would recommend attempting HTTPS first as it is unlikely that you have an SSH key set up on your GitHub account.
 
 Run one of the following two commands, depending on your connection method:
+
 **HTTPS:** `git clone https://github.com/bhsimon3/fetch.git`
+
 **SSH:** `git clone git@github.com:bhsimon3/fetch.git`
 
 ### Step 2: Build the Docker Image
@@ -41,14 +43,17 @@ Run one of the following two commands, depending on your connection method:
 The second step to running this application is to build the Docker image based on the provided Dockerfile.
 
 First, you will need to navigate to the folder that was cloned in Step 1:
+
 `cd fetch`
 
 Then, you will need to build the Docker image. This can be done with the following command:
+
 `docker build -t receipt-processor`
 
 ### Step 3: Run the Docker Image
 
 Finally, to run the application you will need to start a Docker container based on the image created in Step 2. To do this, you can use the following command:
+
 `docker run -rm -p 3001:3001 receipt-processor`
 
 <a name="endpoints"></a>
