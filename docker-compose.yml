@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    working_dir: /usr/src/app
+    command: npm run start:prod
+    volumes:
+      - ./receipt-processor:/usr/src/app
+    environment:
+      - NODE_ENV=production

@@ -48,13 +48,13 @@ First, you will need to navigate to the folder that was cloned in Step 1:
 
 Then, you will need to build the Docker image. This can be done with the following command:
 
-`docker build -t receipt-processor`
+`docker build -t receipt-processor .`
 
 ### Step 3: Run the Docker Image
 
 Finally, to run the application you will need to start a Docker container based on the image created in Step 2. To do this, you can use the following command:
 
-`docker run -rm -p 3001:3001 receipt-processor`
+`docker-compose up --build`
 
 <a name="endpoints"></a>
 
@@ -93,7 +93,7 @@ How many points should be earned is defined by the rules listed in the Rules sec
 
 **Example Request via `curl`**:
 
-    curl -X POST -H "Content-Type: application/json" -d "{\"retailer\":\"Walgreens\",\"purchaseDate\":\"2022-01-02\",\"purchaseTime\":\"08:25\",\"total\":\"2.65\",\"items\":[{\"shortDescription\":\"Pepsi - 12-oz\",\"price\":\"1.25\"},{\"shortDescription\":\"Dasani\",\"price\":\"1.40\"}]}" http://localhost:3001/receipts/process
+    curl -X POST -H "Content-Type: application/json" -d "{\"retailer\":\"Walgreens\",\"purchaseDate\":\"2022-01-02\",\"purchaseTime\":\"08:25\",\"total\":\"2.65\",\"items\":[{\"shortDescription\":\"Pepsi - 12-oz\",\"price\":\"1.25\"},{\"shortDescription\":\"Dasani\",\"price\":\"1.40\"}]}" http://localhost:3000/receipts/process
 
 **Example Response**:
 
@@ -111,13 +111,13 @@ How many points should be earned is defined by the rules listed in the Rules sec
 
 **Example Request (via cURL)**:
 
-    curl -X GET "localhost:3001/receipts/3/points" \ -H "Content-Type: application/json"
+    curl -X GET "localhost:3000/receipts/3/points" \ -H "Content-Type: application/json"
 
 **Example Request (via Fetch API in JavaScript)**:
 
     let id = 3;
 
-    fetch(`localhost:3001/receipts/${id}/points`)
+    fetch(`localhost:3000/receipts/${id}/points`)
         .then((response) => {
     	    return response.json();
         })
