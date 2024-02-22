@@ -1,4 +1,9 @@
-import { IsNumber, IsString, ValidateNested, IsArray } from 'class-validator';
+import {
+  IsString,
+  ValidateNested,
+  IsArray,
+  IsNumberString,
+} from 'class-validator';
 import { ItemDto } from './item.dto';
 
 export class CreateReceiptDto {
@@ -11,7 +16,7 @@ export class CreateReceiptDto {
   @IsString()
   purchaseTime: string;
 
-  @IsNumber()
+  @IsNumberString()
   total: number;
 
   @IsArray()
